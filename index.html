@@ -5,12 +5,24 @@
 
 <body bgcolor="#FFFFFF">
 <style>
+    body {
+        background: black;
+        color: lightgrey;
+    }
     p {
         color: grey;
     }
     canvas {
         border: solid;
         border-color: grey;
+        background: lightseagreen;
+    }
+
+    div.image-container {
+        border: solid;
+        border-color: grey;
+        min-width: 100px;
+        min-height: 5px;
     }
 
     div.circle {
@@ -18,6 +30,15 @@
         border: solid 0.5px;
         width: 1px;
         height: 1px;
+        border-color: lightgray;
+        background: lightgray;
+        color: lightgray;
+    }
+    
+    div.color-palette {
+        border: solid 1px;
+        border-color: white;
+        border-radius: 4px;
     }
 </style>
 
@@ -35,6 +56,7 @@
                 Your browser does not support the canvas element.
             </canvas>
             <div>
+                <button type="button" id="drawingUndo">Undo</button>
                 <button type="button" id="drawingClear">Clear</button>
             </div>
         </span>
@@ -63,7 +85,7 @@
             </div>
         </span>
         <span>
-            <div id="colorPalette">
+            <div id="colorPalette" class="color-palette">
 
             </div>
         </span>
@@ -87,10 +109,21 @@
             </canvas>
         </span>
     </div>
+
+    <div>
+        <span>
+            <p>Download</p>
+            <div>
+                <button type="button" id="downloadImageButton">Download</button>
+            </div>
+        </span>
+    </div>
 </center>
 
 </p>
-
+<script type="text/javascript" src="math2d.js"></script>
+<script type="text/javascript" src="brush.js"></script>
+<script type="text/javascript" src="render.js"></script>
 <script type="text/javascript" src="main.js"></script>
 
 </body>
